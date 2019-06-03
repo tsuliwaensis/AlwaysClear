@@ -2,8 +2,6 @@ var cleardownloads = function(){
 	var clearfreq = 5000;
 
 	setTimeout(function() {
-		chrome.downloads.setShelfEnabled(false);
-		chrome.downloads.setShelfEnabled(true);
 		chrome.downloads.erase({state: "complete"});
 	}, clearfreq)
 };
