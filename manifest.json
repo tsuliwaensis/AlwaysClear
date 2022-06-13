@@ -1,10 +1,10 @@
 {
-   "background": {
+   "service_worker": {
       "persistent": false,
-      "scripts": [ "background.js" ]
+      "scripts": "background.js"
    },
    "description": "A Google Chrome Extension to always clear the downloads list of all completed downloads.",
-   "manifest_version": 2,
+   "manifest_version": 3,
    "name": "Always Clear Downloads 2",
    "page_action": {
       "default_icon": {
@@ -15,8 +15,7 @@
       }
    },
    "permissions": [
-   		"downloads",
-   		"downloads.shelf"
+   		"downloads"
    ],
-   "version": "2.1.2"
+   "version": "2.1.5"
 }
