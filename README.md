@@ -5,7 +5,9 @@ version 2.1 - This version modernizes the code to use the most recent Chrome API
 
 version 2.1.1 & 2.1.2 - Whoops!
 
-version 2.1.3 - Clear download list along with hiding the download shelf.
+version 2.1.3 - Clear download list along with hiding the download shelf
+
+version 2.1.5 - Removed permission for download shelf
 
 [Install via the Chrome Webstore](https://chrome.google.com/webstore/detail/always-clear-downloads-2/jcajchndfkmnaefkhoaoiagemplbfffn)
 
