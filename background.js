@@ -1,15 +1,28 @@
-var cleardownloads = function(){
-	var clearfreq = 5000;
+// Function to clear completed downloads
+function clearDownloads(delaySeconds) {
+  const delayMilliseconds = delaySeconds * 1000;
 
-	setTimeout(function() {
-		chrome.downloads.erase({state: "complete"});
-	}, clearfreq)
-};
+  setTimeout(() => {
+    chrome.downloads.erase({ state: "complete" }, (erasedIds) => {
+      if (chrome.runtime.lastError) {
+        console.error("Error erasing downloads:", chrome.runtime.lastError);
+      } else {
+        console.log("Cleared completed downloads:", erasedIds);
+      }
+    });
+  }, delayMilliseconds);
+}
 
-chrome.downloads.onChanged.addListener(function (e) {
-	if (typeof e.state !== "undefined") {
-		if (e.state.current === "complete") {
-			cleardownloads();
-		}
-	}
+// Listen for changes in download state
+chrome.downloads.onChanged.addListener((downloadDelta) => {
+  if (
+    downloadDelta.state &&
+    downloadDelta.state.current === "complete"
+  ) {
+    // Get the delay from storage, or use a default value (e.g., 5 seconds)
+    chrome.storage.sync.get({ clearDelay: 5 }, (items) => {
+      clearDownloads(items.clearDelay);
+    });
+  }
 });
+
