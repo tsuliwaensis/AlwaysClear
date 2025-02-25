@@ -1,0 +1,22 @@
+!DOCTYPE html>
+<html>
+<head>
+  <title>Always Clear Download Options</title>
+  <style>
+    body { font-family: sans-serif; }
+    label { display: block; margin-bottom: 5px; }
+    input[type="number"] { width: 60px; }
+  </style>
+</head>
+<body>
+  <h1>Always Clear Downloads Options</h1>
+
+  <label for="clearDelay">Clear completed downloads after (seconds):</label>
+  <input type="number" id="clearDelay" min="1" step="1" value="5">
+
+  <button id="save">Save</button>
+  <div id="status"></div>
+
+  <script src="options.js"></script>
+</body>
+</html>
