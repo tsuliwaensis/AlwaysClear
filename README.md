@@ -1,13 +1,7 @@
 # Always Clear Downloads
 This extensions fixes the original Always Clear Downloads that can no longer be installed since Google discontinued support for extensions using [manifest.json version 1](https://developer.chrome.com/extensions/manifestVersion)
 
-version 2.1 - This version modernizes the code to use the most recent Chrome APIs. Should also prevent the extension from going inactive. This version requires more permissions so you will have to re-enable the extension. The new permission simply allows the extension to access the download shelf.
-
-version 2.1.1 & 2.1.2 - Whoops!
-
-version 2.1.3 - Clear download list along with hiding the download shelf
-
-version 2.1.5 - Removed permission for download shelf
+Version 3.0: You can now specify the amount of time before the extension clears the download list. Refactored code.
 
 [Install via the Chrome Webstore](https://chrome.google.com/webstore/detail/always-clear-downloads-2/jcajchndfkmnaefkhoaoiagemplbfffn)
 
